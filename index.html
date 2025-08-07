@@ -1,0 +1,678 @@
+# JAJE-depannage/* VARIABLES */
+:root {
+    --color-urgence: #ff4444;
+    --color-primary: #2c5f5f;
+    --color-secondary: #4CAF50;
+    --color-accent: #FFA726;
+    --color-text: #333;
+    --color-light: #f8f9fa;
+}
+
+/* STYLES GÉNÉRAUX */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER URGENCE */
+.header-urgence {
+    background: var(--color-primary);
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-urgence .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contact-urgence {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.urgence-badge {
+    background: var(--color-urgence);
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-appel {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-appel:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* HERO BANNER */
+.hero-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: var(--color-accent);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: var(--color-urgence);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--color-primary);
+}
+
+.guarantees {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.guarantees span {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+/* SERVICES URGENCE */
+.services-urgence {
+    padding: 80px 0;
+    background: var(--color-light);
+}
+
+.services-urgence h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--color-primary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.service-card.urgence {
+    border-top: 4px solid var(--color-urgence);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.service-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.service-card li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-card li::before {
+    content: "✓";
+    color: var(--color-secondary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.delai {
+    background: var(--color-urgence);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.btn-service {
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-service:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* DÉLAIS INTERVENTION */
+.delais-intervention {
+    padding: 60px 0;
+    background: var(--color-primary);
+    color: white;
+}
+
+.delais-intervention h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.delais-table {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.delai-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    align-items: center;
+    text-align: center;
+}
+
+.delai-row:last-child {
+    border-bottom: none;
+}
+
+.delai-row .service {
+    font-weight: bold;
+}
+
+.delai-row .temps {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.delai-row .dispo {
+    color: var(--color-secondary);
+}
+
+/* AVANTAGES */
+.avantages {
+    padding: 80px 0;
+}
+
+.avantages h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--color-primary);
+}
+
+.avantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.avantage {
+    text-align: center;
+    padding: 30px;
+}
+
+.avantage-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.avantage h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+/* CONTACT URGENCE */
+.contact-urgence-section {
+    padding: 80px 0;
+    background: var(--color-light);
+}
+
+.contact-urgence-box {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-urgence-box h2 {
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+.numero-urgence {
+    font-size: 3rem;
+    color: var(--color-urgence);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.contact-email a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.conseils-urgence {
+    background: var(--color-accent);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--color-primary);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.footer-services ul {
+    list-style: none;
+}
+
+.footer-services li {
+    padding: 5px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+}
+
+.footer-bottom a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* CHAT WIDGET */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.chat-button {
+    background: var(--color-primary);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.chat-button:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.chat-notification {
+    background: var(--color-urgence);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    animation: pulse 2s infinite;
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: none;
+    flex-direction: column;
+}
+
+.chat-window.active {
+    display: flex;
+}
+
+.chat-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 15px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-agent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.agent-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.status.online {
+    color: var(--color-secondary);
+    font-size: 12px;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.agent-message .message-content {
+    background: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 5px;
+}
+
+.user-message .message-content {
+    background: var(--color-primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 5px 15px;
+    margin-left: 50px;
+}
+
+.message-time {
+    font-size: 10px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.quick-questions {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #eee;
+}
+
+.quick-btn {
+    background: var(--color-light);
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.quick-btn:hover {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+}
+
+.send-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.chat-urgence {
+    background: var(--color-urgence);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn-urgence-chat {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header-urgence .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-banner h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .guarantees {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .delai-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .numero-urgence {
+        font-size: 2rem;
+    }
+    
+    .chat-window {
+        width: 300px;
+        height: 450px;
+    }
+    
+    .chat-widget {
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
